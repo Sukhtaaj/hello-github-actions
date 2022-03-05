@@ -1,11 +1,10 @@
-name: A workflow for my Hello World file
-on: push
+name: Pull Request Stats
+
+on: pull_request
+
 jobs:
-  build:
-    name: Hello world action
+  stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
-        with:
-          MY_NAME: "Sukhtaaj"
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@master
